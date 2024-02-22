@@ -18,8 +18,11 @@ import userRouter from "./routes/user.route.js"
 import formRouter from "./routes/form.route.js"
 
 
+app.get("/", (req,res) => {
+    res.send("Server is running..");
+});
+
 app.use("/api/user",userRouter);
 app.use("/api/form", formRouter);
-
 
 export { app }
