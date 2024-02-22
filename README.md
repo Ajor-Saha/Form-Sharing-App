@@ -23,4 +23,43 @@ This project is a simple yet effective form builder tool built using the MERN st
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Ajor-Saha/Form-Sharing-App.git
+```
+
+### Navigate to the project directory:
+```bash
+cd <project-directory>
+```
+
+```
+cd frontend
+npm install
+```
+
+```
+cd api
+npm install
+```
+
+```
+npm run dev
+```
+
+```
+cd frontend
+npm run dev
+```
+
+### Configure environment variables:
+
+Create a .env file in the backend directory.
+Add the following variables:
+```
+MONGODB_URI = mongodb+srv://ajor123:admin@ajor123.17vews1.mongodb.net/
+PORT = 4000
+CORS_ORIGIN = *
+ACCESS_TOKEN_SECRET=chai-aur-code
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRET=chai-aur-backend
+REFRESH_TOKEN_EXPIRY=10d
+```
