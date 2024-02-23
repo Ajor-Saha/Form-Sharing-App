@@ -19,14 +19,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
-
+        <Route path="form/:formId" element={<FormPageById />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/createForm" element={<CreateForm />} />
           <Route path="/getallForms" element={<FormsPage />} />
 
           {/* <Route path='/forms/' element={< />} /> */}
-          <Route path="/form/:formId" element={<FormPageById />} />
+          
         </Route>
       </Routes>
     </BrowserRouter>

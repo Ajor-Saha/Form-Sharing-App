@@ -14,12 +14,8 @@ const FormPageById = () => {
     // Fetch form data based on the formId
     const fetchFormData = async () => {
       try {
-        const response = await fetch(`https://form-sharing-app.vercel.app/api/form/${formId}`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`, // Include the access token in request headers
-          },
-        });
-
+        const response = await fetch(`https://form-sharing-app.vercel.app/api/form/${formId}`);
+  
         if (!response.ok) {
           throw new Error('Failed to fetch form data');
         }
@@ -29,10 +25,10 @@ const FormPageById = () => {
         console.error(error);
       }
     };
-
+  
     fetchFormData();
-  }, [formId,accessToken]);
-
+  }, [formId]);
+  
   if (!formData) {
     return <div>Loading...</div>;
   }
@@ -69,7 +65,6 @@ const FormPageById = () => {
         },
         body: JSON.stringify({ fields: fieldValues }),
       });
-      
       if (!response.ok) {
         throw new Error('Failed to submit form');
       }
