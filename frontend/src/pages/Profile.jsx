@@ -26,7 +26,7 @@ const Profile = () => {
 
   const handleSignOut = async () => {
     try {
-      const response = await fetch("/api/user/signout", {
+      const response = await fetch("https://form-sharing-app.vercel.app/api/user/signout", {
         method: "POST", // Adjust the method as needed
         // Add any required headers or options
       });

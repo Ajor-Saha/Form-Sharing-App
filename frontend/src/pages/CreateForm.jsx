@@ -38,7 +38,7 @@ const CreateForm = () => {
       }
 
       // Send formFields to backend
-      const response = await fetch("/api/form/createForm", {
+      const response = await fetch("https://form-sharing-app.vercel.app/api/form/createForm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

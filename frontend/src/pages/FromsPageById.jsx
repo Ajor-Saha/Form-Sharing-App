@@ -12,7 +12,7 @@ const FormPageById = () => {
     // Fetch form data based on the formId
     const fetchFormData = async () => {
       try {
-        const response = await fetch(`/api/form/${formId}`);
+        const response = await fetch(`https://form-sharing-app.vercel.app/api/form/${formId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch form data');
         }
@@ -54,7 +54,7 @@ const FormPageById = () => {
         value: formFields[field.name] || '' // Use field.name directly here
       }));
 
-      const response = await fetch(`/api/form/${formId}`, {
+      const response = await fetch(`https://form-sharing-app.vercel.app/api/form/${formId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

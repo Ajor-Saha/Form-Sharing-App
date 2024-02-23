@@ -8,7 +8,7 @@ const FormsPage = () => {
   useEffect(() => {
     const fetchUserForms = async () => {
       try {
-        const response = await fetch("/api/form/getUserForms"); // Adjust the endpoint as per your backend API
+        const response = await fetch("https://form-sharing-app.vercel.app/api/form/getUserForms"); // Adjust the endpoint as per your backend API
         if (!response.ok) {
           throw new Error("Failed to fetch user forms");
         }

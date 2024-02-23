@@ -17,7 +17,7 @@ const SignIn = () => {
         e.preventDefault();
         try {
           dispatch(signInStart());
-          const res = await fetch('/api/user/signin', {
+          const res = await fetch('https://form-sharing-app.vercel.app/api/user/signin', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
