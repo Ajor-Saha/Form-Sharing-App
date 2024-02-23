@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://form-sharing-app.vercel.app',
+        target: 'https://form-sharing-app.vercel.app/',
         secure: false,
       },
     },

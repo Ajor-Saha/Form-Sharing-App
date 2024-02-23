@@ -1,5 +1,4 @@
 import dotenv from "dotenv";
-import connectDB from "./src/db/index.js";
 import { app } from "./src/app.js";
 import mongoose from "mongoose";
 
