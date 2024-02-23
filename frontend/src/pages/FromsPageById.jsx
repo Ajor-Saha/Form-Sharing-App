@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const FormPageById = () => {
   const { formId } = useParams();
@@ -92,6 +92,8 @@ const FormPageById = () => {
 
   return (
     <div className="py-32 w-full px-20 lg:px-48">
+      <p className='px-5 py-2'>In order to submit this form you need to login first and then paste the form link to brower and then you can submit the form</p>
+      <Link to="/sign-in" className='bg-gray-800 text-white px-3 py-2 mt-2'>Login</Link>
       <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-600 mb-4">
         Form id:{formData._id}
       </h3>{" "}
