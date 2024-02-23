@@ -6,8 +6,8 @@ const Form = ({ formData }) => {
     // Handle form submission here if needed
   };
 
-  
-  const baseUrl = 'https://form-sharing-app.vercel.app'; 
+ 
+  const baseUrl = 'https://form-sharing-app.vercel.app/api'; 
   const [uniqueLink, setUniqueLink] = useState('');
 
   const generateUniqueLink = () => {

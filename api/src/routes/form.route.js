@@ -4,11 +4,12 @@ import { verifyJWT } from "../middleware/auth.middleware.js";
 
 
 const router = Router()
-router.use(verifyJWT);
 
-router.route("/getAllResponses").get(getAllResponses)
-router.route("/createForm").post(createForm)
-router.route("/getUserForms").get(getUserForms)
+
+
+router.route("/getAllResponses").get(verifyJWT,getAllResponses)
+router.route("/createForm").post(verifyJWT,createForm)
+router.route("/getUserForms").get(verifyJWT,getUserForms)
 router.route("/:formId").get(getFormById)
-router.route("/:formId").post(submitForm)
+router.route("/:formId").post(verifyJWT, submitForm)
 export default router

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { RiAddLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const CreateForm = () => {
@@ -9,6 +10,7 @@ const CreateForm = () => {
   const [error, setError] = useState(null);
   const [currentFieldIndex, setCurrentFieldIndex] = useState(0);
   const [isCreatingForm, setIsCreatingForm] = useState(false); // Track whether the form is being created
+  const { accessToken } = useSelector((state) => state.user); // Accessing accessToken from Redux store
 
   const handleCreateField = () => {
     setIsCreatingForm(true); // Set isCreatingForm to true when creating form
@@ -42,6 +44,7 @@ const CreateForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`, // Including accessToken in request headers
         },
         body: JSON.stringify({ fields: formFields }),
       });

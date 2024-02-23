@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 const FormPageById = () => {
@@ -7,12 +8,18 @@ const FormPageById = () => {
   const [formFields, setFormFields] = useState({});
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const { accessToken } = useSelector((state) => state.user); // Accessing accessToken from Redux store
 
   useEffect(() => {
     // Fetch form data based on the formId
     const fetchFormData = async () => {
       try {
-        const response = await fetch(`https://form-sharing-app.vercel.app/api/form/${formId}`);
+        const response = await fetch(`https://form-sharing-app.vercel.app/api/form/${formId}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`, // Include the access token in request headers
+          },
+        });
+
         if (!response.ok) {
           throw new Error('Failed to fetch form data');
         }
@@ -24,7 +31,7 @@ const FormPageById = () => {
     };
 
     fetchFormData();
-  }, [formId]);
+  }, [formId,accessToken]);
 
   if (!formData) {
     return <div>Loading...</div>;
@@ -58,9 +65,11 @@ const FormPageById = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessToken}`, // Include the access token in request headers
         },
         body: JSON.stringify({ fields: fieldValues }),
       });
+      
       if (!response.ok) {
         throw new Error('Failed to submit form');
       }

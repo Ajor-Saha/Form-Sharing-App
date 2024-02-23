@@ -29,7 +29,10 @@ const SignIn = () => {
             dispatch(signInFailure(data));
             return;
           }
-          dispatch(signInSuccess(data));
+
+          const { user, accessToken } = data.data; // Check if accessToken is present in the correct structure
+          dispatch(signInSuccess({ user, accessToken }));
+
           navigate('/');
         } catch (error) {
           dispatch(signInFailure(error));
