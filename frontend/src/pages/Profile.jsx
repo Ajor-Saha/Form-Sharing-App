@@ -10,7 +10,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchResponses = async () => {
       try {
-        const response = await fetch("/api/form/getAllResponses"); // Assuming this is the correct endpoint
+        const response = await fetch("https://form-sharing-app.vercel.app/api/form/getAllResponses"); // Assuming this is the correct endpoint
         if (!response.ok) {
           throw new Error("Failed to fetch responses");
         }

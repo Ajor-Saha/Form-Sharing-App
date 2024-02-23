@@ -7,7 +7,7 @@ const Form = ({ formData }) => {
   };
 
   
-  const baseUrl = 'http://localhost:5173'; 
+  const baseUrl = 'https://form-sharing-app.vercel.app'; 
   const [uniqueLink, setUniqueLink] = useState('');
 
   const generateUniqueLink = () => {
