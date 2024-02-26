@@ -73,7 +73,7 @@ const Profile = () => {
         {" "}
         Your Forms Responses
       </h1>
-      <div className="flex flex-col md:flex-row py-20 justify-center items-center md:justify-between">
+      <div className="flex flex-wrap px-20   md:flex-row py-20 justify-center items-center md:justify-between">
         {loadinga ? (
           <p>Loading responses...</p>
         ) : (
